@@ -1,0 +1,46 @@
+<html>
+	<head th:replace="~{base :: head}"></head>
+    <body>
+    	<head th:replace="~{base :: Logo}"></head>
+    	
+    	<div class="container">
+        	<div th:replace="~{base :: titulo('Endereço')}"></div>
+
+			<div class="card mt-3">
+            	<form class="card-body" action="/proposta/novo2" method="POST">
+            	
+	                <div class="form-group">
+	                    <label for="cep">CEP</label>
+	                    <input name="cep"  class="form-control" placeholder="00.000-000"/>
+	                </div>
+                
+	                <div  class="form-group">
+	                    <label for="logradouro">Logradouro</label>
+	                    <input name="logradouro"  class="form-control" placeholder="Rua, Avenida, Quadra,..."/>
+	                </div>
+                
+	                <div  class="form-group">
+	                    <label for="bairro">Bairro</label>
+	                    <input name="bairro"  class="form-control" placeholder="Bairro"/>
+	                </div>
+                
+	                <div class="form-group">
+	                    <label for="complemento">Complemento</label>
+	                    <input name="complemento"  class="form-control" placeholder="Apt., Bloco"/>
+	                </div>
+                
+	                <div class="form-group">
+	                    <label for="cidade">Cidade</label>
+	                    <input name="cidade"  class="form-control" placeholder="Cidade"/>
+	                </div>
+                
+	                <div class="form-group">
+	                    <label for="estado">Estado</label>
+	                    <input name="estado"  class="form-control" placeholder="Estado"/>
+	                </div>
+                
+                <button class="btn btn-primary"  type="submit">Cadastrar</button>
+            </form>
+        </div>
+    </body>
+</html>

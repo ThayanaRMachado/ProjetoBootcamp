@@ -1,0 +1,43 @@
+<html>
+	<head th:replace="~{base :: head}"></head>
+	<body>	
+		<div th:replace="~{base :: Logo}"></div>
+		<div class="container">
+		<div th:replace="~{base :: titulo('Minhas Propostas')}"></div>
+			
+			<nav class="navbar navbar-expand navbar-light bg-light d-flex justify-content-between mb-3">
+				<a href="/proposta/formulario"><button class="btn btn-outline-secondary my-2 my-sm-0">Nova</button></a>
+				<a href="/proposta/formulario2"><button class="btn btn-outline-secondary my-2 my-sm-0">Endereço</button></a>
+				<a href="/proposta/formulario3"><button class="btn btn-outline-secondary my-2 my-sm-0">CNH</button></a>
+			</nav>
+			
+			
+			<div class="card mb-3" th:each="proposta : ${propostas}">
+				<div class="card-header">Abra sua conta</div>
+				<div class="card-body">
+					<div class="row">
+						<div class="col-12 col-sm-8 mb-3">
+							<div class="row ">
+								<div class="col-md-5">Confirme os seus dados</span></div>
+							</div><!--fim row-->
+							
+							<div>Nome</div> 
+							<div> <input class="form-control" required th:value="${proposta.nomeCliente}" placeholder="Nome..." type="text"/></div>
+							 
+							<div>Sobrenome</div> 
+							<div> <input class="form-control" required th:value="${proposta.sobrenomeCliente}" placeholder="Sobrenome..." type="text"/></div>
+
+							<div>Email</div> 
+							<div> <input class="form-control" required th:value="${proposta.email}" placeholder="nome@email.com" type="text"/></div>
+
+							<div>CPF</div> 
+							<div> <input class="form-control" required th:value="${proposta.cpf}" placeholder="000.000.000-00" type="CPF" min="11" max="11" /></div>
+
+							<div>Data de Nascimento</div> 
+							<div> <input class="form-control" required th:value="${proposta.dataNascimento}" placeholder="Data de Nascimento" type="date"  min="2002"/></div>
+					</div><!--row-->
+				</div><!--card-body-->
+			</div><!--fim card-->
+		</div><!--fim container-->
+	</body>
+</html>
